@@ -1,7 +1,11 @@
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { browser } from '$app/environment';
 
-gsap.registerPlugin(ScrollTrigger);
+// Only register the plugin in the browser environment
+if (browser) {
+  gsap.registerPlugin(ScrollTrigger);
+}
 
 interface AnimateOnScrollOptions {
   animationType?: 'fade' | 'slideUp' | 'scale' | 'slideLeft' | 'slideRight';
@@ -12,6 +16,11 @@ interface AnimateOnScrollOptions {
 }
 
 export function animateOnScroll(node: Element, options: AnimateOnScrollOptions = {}) {
+  // Ensure this code only runs in the browser
+  if (!browser) {
+    return {}; // Return an empty object for SSR compatibility
+  }
+
   const { 
     animationType = 'fade', 
     delay = 0, 
@@ -85,11 +94,13 @@ export function animateOnScroll(node: Element, options: AnimateOnScrollOptions =
 
   return {
     destroy() {
-      // Cleanup
-      delayedSet.kill(); // Kill the delayed call if component is destroyed before it runs
-      trigger.kill();
-       // Optional: Remove class on destroy if needed
-      if (node instanceof HTMLElement) node.classList.remove('gsap-active');
+      // Ensure cleanup also only happens in browser
+       if (browser) {
+          delayedSet.kill(); // Kill the delayed call if component is destroyed before it runs
+          trigger.kill();
+           // Optional: Remove class on destroy if needed
+          if (node instanceof HTMLElement) node.classList.remove('gsap-active');
+       }
     }
   };
 } 

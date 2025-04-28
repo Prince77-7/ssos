@@ -1,7 +1,11 @@
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { browser } from '$app/environment';
 
-gsap.registerPlugin(ScrollTrigger);
+// Only register the plugin in the browser environment
+if (browser) {
+  gsap.registerPlugin(ScrollTrigger);
+}
 
 interface CountUpOptions {
   endValue: number;
@@ -11,6 +15,11 @@ interface CountUpOptions {
 }
 
 export function countUp(node: HTMLElement, options: CountUpOptions) {
+  // Ensure this code only runs in the browser
+  if (!browser) {
+    return {}; // Return an empty object for SSR compatibility
+  }
+
   const { endValue, duration = 2, delay = 0, once = true } = options;
 
   const target = { val: 0 }; // Start counter at 0
@@ -49,7 +58,10 @@ export function countUp(node: HTMLElement, options: CountUpOptions) {
 
   return {
     destroy() {
-      trigger.kill();
+      // Ensure cleanup also only happens in browser
+       if (browser) {
+          trigger.kill();
+       }
     }
   };
 } 

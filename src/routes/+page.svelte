@@ -211,8 +211,8 @@
     --card-initial-margin: 2rem; /* Space around the card initially */
     --card-final-margin: 0rem;
     --card-initial-width: calc(100% - (var(--card-initial-margin) * 2));
-    /* Removed --card-initial-min-height (vh unreliable in SSR) */
-    /* --card-final-min-height: auto; */ /* No longer needed if not interpolating */
+    --card-initial-min-height: calc(100vh - (var(--card-initial-margin) * 2));
+    --card-final-min-height: auto; /* Let content dictate height after scroll */
 
     --card-padding-top-start: 4rem;
     --card-padding-top-end: 6rem;
@@ -248,8 +248,9 @@
 
     /* Interpolate size, margin, transform, z-index */
     width: calc(var(--card-initial-width) + (100% - var(--card-initial-width)) * var(--scroll-progress, 0));
-    /* Removed min-height property */
+    min-height: calc(var(--card-initial-min-height) + (100vh - var(--card-initial-min-height)) * var(--scroll-progress, 0));
     margin: calc(var(--card-initial-margin) + (var(--card-final-margin) - var(--card-initial-margin)) * var(--scroll-progress, 0));
+    /* Use dynamic header height for transform */
     transform: translateY(calc(-1 * var(--dynamic-header-height, 0px) * var(--scroll-progress, 0)));
     z-index: calc(1 + floor(var(--scroll-progress, 0) * 100));
 
