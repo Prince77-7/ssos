@@ -47,12 +47,15 @@
   <div class="container">
     <div class="hero-card">
       <div class="hero-content">
-        <img src="/assets/logo.svg" alt="Shield of Steel LLC" class="hero-logo-full" />
-        <p class="hero-tagline">Protecting What Matters Most</p>
+        <h1 class="hero-headline">Comprehensive Security Solutions for Tennessee</h1>
+        <p class="hero-subheadline">
+          Shield of Steel delivers professional, reliable security services tailored to protect your people, property, and assets across the state.
+        </p>
         <div>
-          <a href="/contact" class="btn btn-dark">Request a consultation</a>
+          <a href="/contact" class="btn btn-dark">Request a Consultation &rarr;</a>
         </div>
       </div>
+      <div class="hero-gradient-overlay"></div>
     </div>
   </div>
 </section>
@@ -93,8 +96,8 @@
           <div class="stat-label">CLIENTS PROTECTED</div>
         </div>
         <div class="stat">
-          <div class="stat-number" use:countUp={{ endValue: 25, delay: 0.45 }}>25+</div>
-          <div class="stat-label">YEARS EXPERIENCE</div>
+          <div class="stat-number" use:countUp={{ endValue: 100, delay: 0.45 }}>100</div>
+          <div class="stat-label">MODERN SOLUTIONS</div>
         </div>
         <div class="stat">
           <div class="stat-number" use:countUp={{ endValue: 1000, delay: 0.6 }}>1,000+</div>
@@ -243,6 +246,12 @@
 
   /* New Hero Card Styles - Use CSS vars for interpolation */
   .hero-card {
+    display: flex; /* Added */
+    align-items: center; /* Added */
+    justify-content: center; /* Added */
+    flex-direction: column; /* Added */
+    height: 100%; /* Added for vertical centering */
+
     position: relative; 
     box-sizing: border-box; 
 
@@ -259,8 +268,9 @@
     background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('/images/home-intro-visual-photo.jpg');
     background-size: cover;
     background-position: center center;
-    overflow: hidden;
+    overflow: hidden; /* Keep overflow hidden */
     color: white;
+    text-align: center; /* Center text in the card */
 
     /* Interpolate border-radius */
     border-radius: calc(var(--card-border-radius-start) + (var(--card-border-radius-end) - var(--card-border-radius-start)) * var(--scroll-progress, 0));
@@ -275,11 +285,48 @@
     box-shadow: 0 10px 30px rgba(0, 0, 0, calc(0.1 * (1 - var(--scroll-progress, 0))));
   }
 
+  /* New gradient overlay style */
+  .hero-gradient-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 150px; /* Adjust height as needed */
+    background: linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,0.8) 80%, rgba(0,0,0,1) 100%);
+    pointer-events: none; /* Allows clicks to pass through */
+    z-index: 2; /* Ensure it's above the background image but below content if needed */
+    /* Match border-radius interpolation if the card flattens */
+    border-bottom-left-radius: calc(var(--card-border-radius-start) + (var(--card-border-radius-end) - var(--card-border-radius-start)) * var(--scroll-progress, 0));
+    border-bottom-right-radius: calc(var(--card-border-radius-start) + (var(--card-border-radius-end) - var(--card-border-radius-start)) * var(--scroll-progress, 0));
+  }
+
   /* Remove .hero-card.expanded styles */
 
   /* Ensure hero content is centered within the card */
   .hero-content {
-    text-align: center; 
+    /* text-align: center; Removed - Handled by hero-card */
+    position: relative; /* Ensure content is above the gradient */
+    z-index: 3; /* Ensure content is above the gradient */
+    max-width: 800px; /* Limit content width */
+    margin: 0 auto; /* Center content block */
+  }
+
+  /* Style new headline */
+  .hero-headline {
+    font-size: clamp(2.5rem, 5vw, 4rem); /* Responsive font size */
+    font-weight: 800;
+    line-height: 1.1;
+    margin-bottom: 1rem;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.4); /* Subtle text shadow */
+  }
+
+  /* Style new subheadline */
+  .hero-subheadline {
+    font-size: clamp(1rem, 2vw, 1.25rem); /* Responsive font size */
+    max-width: 600px; /* Limit width */
+    margin: 0 auto 2.5rem; /* Center and add bottom margin */
+    opacity: 0.9;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.3); /* Subtle text shadow */
   }
 
   .hero-logo img.logo-icon {
@@ -306,6 +353,9 @@
     background-color: white; /* Button white */
     color: black; /* Button text black */
     border-color: white;
+    /* Add specific border-radius for the desired effect */
+    border-radius: 8px 8px 25px 8px; /* top-left, top-right, bottom-right, bottom-left */
+    /* You might need to adjust the default .btn class padding/border if it interferes */
   }
 
   .hero-card .btn-dark:hover {

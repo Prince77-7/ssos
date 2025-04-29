@@ -258,7 +258,7 @@
     </div>
   </header>
   
-  <main>
+  <main style="padding-top: {$headerHeight}px">
     {#key $page.url.pathname}
       <div class="page-content">
         <slot />
@@ -308,7 +308,8 @@
   
   main {
     flex: 1;
-    position: relative; /* Needed for transition positioning */
+    /* Remove position: relative; as it's not needed with padding */
+    /* Add padding-top via inline style */
   }
 
   /* Page Content Wrapper for Transitions */
@@ -328,6 +329,8 @@
     backdrop-filter: blur(8px); /* Slightly reduced blur intensity */
     -webkit-backdrop-filter: blur(8px); 
     border-bottom: 1px solid rgba(255, 255, 255, 0.1); /* Even softer border */
+    /* Add transition for smoother height changes if needed */
+    transition: height 0.2s ease-in-out;
   }
   
   .header-inner {

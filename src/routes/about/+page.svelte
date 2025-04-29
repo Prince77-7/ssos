@@ -91,41 +91,13 @@
 
 <section class="history">
     <div class="container">
-        <h2 class="section-title" use:animateOnScroll={{ animationType: 'slideUp' }}>OUR JOURNEY</h2>
-        <div class="timeline" use:animateOnScroll={{ animationType: 'fade', stagger: 0.2 }}>
+        <h2 class="section-title" use:animateOnScroll={{ animationType: 'slideUp' }}>OUR LAUNCH</h2>
+        <div class="timeline single-entry" use:animateOnScroll={{ animationType: 'fade' }}>
             <div class="timeline-item">
-                <div class="timeline-year">2008</div>
+                <div class="timeline-year">2025</div>
                 <div class="timeline-content">
-                    <h3>FOUNDATION</h3>
-                    <p>Shield of Steel established in Knoxville, Tennessee by security professionals dedicated to providing exceptional protection services.</p>
-                </div>
-            </div>
-            <div class="timeline-item">
-                <div class="timeline-year">2012</div>
-                <div class="timeline-content">
-                    <h3>SERVICE EXPANSION</h3>
-                    <p>Extended our offerings to include specialized security services for corporate clients, retail establishments, and event venues.</p>
-                </div>
-            </div>
-            <div class="timeline-item">
-                <div class="timeline-year">2017</div>
-                <div class="timeline-content">
-                    <h3>TECHNOLOGY INTEGRATION</h3>
-                    <p>Incorporated advanced security monitoring systems and surveillance technologies to complement our guard services.</p>
-                </div>
-            </div>
-            <div class="timeline-item">
-                <div class="timeline-year">2021</div>
-                <div class="timeline-content">
-                    <h3>EXPANDED HEADQUARTERS</h3>
-                    <p>Opened state-of-the-art Operations Center in Knoxville, expanding service capabilities and technical infrastructure.</p>
-                </div>
-            </div>
-             <div class="timeline-item">
-                <div class="timeline-year">PRESENT</div>
-                <div class="timeline-content">
-                    <h3>CONTINUED GROWTH</h3>
-                    <p>Serving clients throughout Tennessee with a reputation for reliability, professionalism, and customized security solutions.</p>
+                    <h3>FOUNDED WITH A VISION</h3>
+                    <p>Shield of Steel was established in Knoxville, Tennessee in 2025. We launched with a clear mission: to redefine security services by integrating cutting-edge technology with highly trained personnel, offering modern solutions built on a foundation of trust and expertise.</p>
                 </div>
             </div>
         </div>
@@ -141,7 +113,7 @@
         <h3>ALEXANDRA WINTERS</h3>
         <p class="leader-title">CHIEF EXECUTIVE OFFICER</p>
         <div class="leader-line"></div>
-        <p>Former law enforcement professional with 20+ years of experience in security operations and team leadership. Drives SOS's commitment to excellence in security services.</p>
+        <p>Brings over 20 years of law enforcement and security operations leadership to Shield of Steel. Her extensive experience shapes SOS's strategic direction and unwavering commitment to excellence.</p>
       </div>
       
       <div class="leader">
@@ -149,7 +121,7 @@
         <h3>MARCUS RAMIREZ</h3>
         <p class="leader-title">OPERATIONS DIRECTOR</p>
         <div class="leader-line"></div>
-        <p>Experienced security manager specializing in personnel deployment, training programs, and security protocols. Ensures smooth day-to-day operations across all client sites.</p>
+        <p>Leverages significant security management experience to oversee personnel deployment, training programs, and protocol implementation, ensuring seamless daily operations for our clients.</p>
       </div>
       
       <div class="leader">
@@ -525,5 +497,16 @@
       grid-template-columns: 1fr;
       gap: 1.5rem;
     }
+  }
+
+  .timeline.single-entry {
+    display: flex;
+    justify-content: center; /* Center the single item */
+  }
+
+  .timeline.single-entry .timeline-item {
+      /* Adjust styling if needed for a single centered item */
+      margin: 0; /* Remove margins if they cause offset */
+      max-width: 600px; /* Optional: constrain width */
   }
 </style> 
