@@ -287,7 +287,8 @@
         </div>
         <div class="footer-contact">
            <h4>GET IN TOUCH</h4>
-           <p>contact@shieldofsteel.com</p>
+           <p><a href="mailto:contact@shieldofsteel.com" class="footer-link">contact@shieldofsteel.com</a></p>
+           <p><a href="tel:202-222-2225" class="footer-link">202-222-2225</a></p>
            <p><a href="/contact" class="btn btn-outline-light btn-small">Contact Form</a></p>
            <p class="copyright">&copy; {new Date().getFullYear()} Shield of Steel LLC. All rights reserved.</p>
         </div>
@@ -736,4 +737,15 @@
        color: white;
    }
    /* ... potentially other global overrides if base styles interfere ... */
+
+  footer a.footer-link {
+    color: rgba(255, 255, 255, 0.8);
+    text-decoration: none;
+    transition: color 0.2s ease;
+  }
+
+  footer a.footer-link:hover {
+    color: white;
+    text-decoration: underline;
+  }
 </style>

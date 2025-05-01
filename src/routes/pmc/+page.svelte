@@ -51,14 +51,21 @@
                     <p class="large-text">Asymmetric warfare, sophisticated cyber threats, and contested electronic environments demand next-generation capabilities. Standard issue is insufficient. SOS delivers the overmatch required.</p>
                 </div>
                 <div class="threat-visual" use:animateOnScroll={{animationType: 'fade'}}>
-                    <!-- Removing the previous complex SVG -->
-                    <div class="abstract-viz-container aspect-1-1">
-                        <!-- New placeholder divs for CSS animation -->
-                        <div class="shape shape-1"></div>
-                        <div class="shape shape-2"></div>
-                        <div class="shape shape-3"></div>
-                        <div class="shape shape-4"></div>
-                    </div>
+                    <!-- Placeholder: Dotted Globe/Network SVG - Increased Visibility -->
+                    <svg class="visual-placeholder-svg aspect-1-1" viewBox="0 0 100 100" fill="none" stroke="rgba(255,255,255,0.6)" stroke-width="0.8">
+                        <circle cx="50" cy="50" r="45" />
+                        <!-- Simple latitude/longitude lines -->
+                        <path d="M5 50 Q 50 70 95 50" />
+                        <path d="M5 50 Q 50 30 95 50" />
+                        <path d="M50 5 V 95" />
+                        <path d="M20 15 Q 50 50 20 85" />
+                        <path d="M80 15 Q 50 50 80 85" />
+                         <!-- Dots -->
+                        <circle cx="30" cy="30" r="1.5" fill="#ccc" stroke="none" />
+                        <circle cx="70" cy="60" r="1.5" fill="#ccc" stroke="none" />
+                        <circle cx="50" cy="80" r="1.5" fill="#ccc" stroke="none" />
+                        <circle cx="65" cy="25" r="1.5" fill="#ccc" stroke="none" />
+                    </svg>
                 </div>
             </div>
         </div>
@@ -113,8 +120,17 @@
        <div class="container">
           <div class="grid protocol-grid">
               <div class="protocol-visual" use:animateOnScroll={{animationType: 'fade'}}>
-                    <!-- Placeholder: Abstract secure data flow / lock graphic -->
-                    <div class="placeholder-img aspect-1-1 secure-graphic">SECURITY PROTOCOL VIZ</div>
+                    <!-- Placeholder: Abstract Secure Lock/Shield SVG - Increased Visibility -->
+                    <svg class="visual-placeholder-svg aspect-1-1" viewBox="0 0 100 100" fill="none" stroke="rgba(255,255,255,0.7)" stroke-width="1.5">
+                        <!-- Shield shape -->
+                        <path d="M50 10 L90 30 V 60 C 90 80, 50 95, 10 60 V 30 Z" />
+                        <!-- Abstract lock/circuit lines -->
+                        <circle cx="50" cy="45" r="15" fill="rgba(255,255,255,0.1)" />
+                        <path d="M50 60 V 75" />
+                        <path d="M40 75 H 60" />
+                        <path d="M35 40 L 45 50" />
+                        <path d="M65 40 L 55 50" />
+                    </svg>
               </div>
               <div class="protocol-text" use:animateOnScroll={{animationType: 'slideLeft'}}>
                    <h2 class="section-title">ABSOLUTE DISCRETION PROTOCOL</h2>
@@ -413,6 +429,15 @@
       font-family: monospace;
       color: rgba(255, 255, 255, 0.2);
       font-size: 0.8rem;
+  }
+
+  .visual-placeholder-svg {
+      display: block; /* Remove extra space */
+      width: 100%;
+      height: auto;
+  }
+  .aspect-1-1 {
+    aspect-ratio: 1 / 1;
   }
 
 </style> 

@@ -58,7 +58,8 @@
            <h3>GENERAL INQUIRIES</h3>
            <div class="info-line"></div>
            <p>For general questions about Shield of Steel, our mission, and capabilities.</p>
-           <p><a href="mailto:contact@shieldofsteel.com">contact@shieldofsteel.com</a></p>
+           <p><a href="mailto:contact@shieldofsteel.com" class="contact-link">contact@shieldofsteel.com</a></p>
+           <p><a href="tel:202-222-2225" class="contact-link">202-222-2225</a></p>
          </div>
          
          <div class="info-block">
@@ -154,21 +155,20 @@
              <div class="office-line"></div>
              <address>
                  Shield of Steel LLC<br>
-                 1100 Defense Boulevard<br>
-                 Washington, D.C. 20001<br>
+                 3540 SUMMER AVE, SUITE 305<br>
+                 MEMPHIS, TN 38122<br>
                  United States
              </address>
-             <p>Secure facility. Visits by appointment only.</p>
+             <p>Visits by appointment only.</p>
          </div>
          <div class="regional-offices" use:animateOnScroll={{ animationType: 'fade', delay: 0.2, stagger: 0.1 }}>
               <h3>REGIONAL CENTERS</h3>
               <div class="office-line"></div>
              <div class="office-list">
                <div><span>NORTH AMERICA:</span> Silicon Valley</div>
-               <div><span>EUROPE:</span> London, Brussels</div>
-               <div><span>ASIA PACIFIC:</span> Tokyo, Singapore, Seoul, Sydney</div>
-               <div><span>MIDDLE EAST & AFRICA:</span> Tel Aviv, Dubai, Nairobi</div>
-               <div><span>LATIN AMERICA:</span> São Paulo</div>
+               <div><span>EUROPE:</span> Portugal, Latvia</div>
+               <div><span>ASIA PACIFIC:</span> Taiwan, Malaysia</div>
+               <div><span>MIDDLE EAST & AFRICA:</span> Bahrain, Yemen</div>
              </div>
          </div>
       </div>
@@ -256,27 +256,24 @@
      margin-bottom: 1rem;
    }
    
-   .info-block p,
-   .info-block address {
-     font-style: normal;
-     line-height: 1.6;
+   .info-block p {
      font-size: 0.95rem;
-     margin-bottom: 0.5rem;
+     margin-bottom: 0.5rem; 
+     line-height: 1.5;
    }
- 
+
    .info-block p:last-child {
-       margin-bottom: 0;
+     margin-bottom: 0;
    }
- 
-   .info-block a {
+
+   .info-block a.contact-link {
+       color: black;
+       text-decoration: none;
        font-weight: 500;
-       text-decoration: underline;
-       text-decoration-thickness: 1px;
-       text-underline-offset: 3px;
-       transition: color 0.2s ease;
    }
-   .info-block a:hover {
-       color: #555;
+
+   .info-block a.contact-link:hover {
+       text-decoration: underline;
    }
    
    .form-grid {

@@ -194,7 +194,8 @@
       <h2 class="section-title">GET IN TOUCH</h2>
       <p class="lead-text">Ready to discuss your security needs? Our team is available for a free consultation to assess your requirements.</p>
       <p>Contact us today to learn how we can create a customized security plan for your business or property.</p>
-      <p class="contact-email">contact@shieldofsteel.com</p>
+      <p class="contact-email"><a href="mailto:contact@shieldofsteel.com" class="contact-link">contact@shieldofsteel.com</a></p>
+      <p class="contact-phone"><a href="tel:202-222-2225" class="contact-link">202-222-2225</a></p>
       <p class="contact-address">116 Agnes Rd, Suite 200<br>Knoxville, TN 37919 US</p>
       <a href="/contact" class="btn btn-dark">Request a Free Consultation</a>
     </div>
@@ -577,12 +578,25 @@
       margin-bottom: 1rem;
   }
   
-  .contact-email {
+  .contact-email,
+  .contact-phone,
+  .contact-address {
     font-weight: 600;
     font-size: 1.2rem;
     margin-top: 2rem;
     margin-bottom: 1rem;
     display: block;
+  }
+
+  .contact-email a.contact-link,
+  .contact-phone a.contact-link {
+    color: inherit; /* Inherit color from parent */
+    text-decoration: none;
+  }
+
+  .contact-email a.contact-link:hover,
+  .contact-phone a.contact-link:hover {
+    text-decoration: underline;
   }
   
   .contact-address {
